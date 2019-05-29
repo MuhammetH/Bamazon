@@ -24,7 +24,7 @@ function displayProducts() {
       //declare the value categories
       head: ["Item ID", "Product Name", "Category", "Price", "Quantity"],
       //set widths to scale
-      colWidths: [5, 30, 18, 10, 5]
+      colWidths: [10, 30, 18, 10, 10]
     });
     //for each row of the loop
     for (i = 0; i < response.length; i++) {
@@ -67,7 +67,7 @@ function inquireForPurchase() {
 
 function purchaseFromDatabase(ID, quantityNeeded) {
   //check quantity of desired purchase. Minus quantity of the itemID from database if possible. Else inform user "Quantity desired not in stock"
-  connection.query("SELECT * FROM Products WHERE itemID = " + ID, function(
+  connection.query('SELECT * FROM Products WHERE itemID = ' + ID, function(
     error,
     response
   ) {
@@ -92,9 +92,9 @@ function purchaseFromDatabase(ID, quantityNeeded) {
       );
       //update database, minus purchased quantity
       connection.query(
-        "UPDATE Products SET stockQuantity = stockQuantity - " +
+        'UPDATE Products SET stockQuantity = stockQuantity - ' +
           quantityNeeded +
-          " WHERE itemID = " +
+          ' WHERE itemID = ' +
           ID
       );
     } else {
