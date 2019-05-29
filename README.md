@@ -28,6 +28,8 @@
 7. Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
 
    * If not, the app should log a phrase like `Insufficient quantity!`, and then prevent the order from going through.
+   
+   
    ![alt text](https://github.com/MuhammetH/Bamazon/blob/master/assets/images/we%20don't%20have%20enough%20item.PNG)
 
   
