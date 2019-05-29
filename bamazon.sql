@@ -15,3 +15,11 @@ CREATE TABLE Products(
 /*adding products to our table*/
 INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 8','electronics',449.99,4);
 INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 9','electronics',549.99,2);
+
