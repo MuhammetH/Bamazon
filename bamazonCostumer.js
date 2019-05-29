@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
 });
 
 //Functions
-function displayAll() {
+function displayProducts() {
   //show all ids, names, and products from database.
   connection.query("SELECT * FROM Products", function(error, response) {
     if (error) {
@@ -104,8 +104,8 @@ function purchaseFromDatabase(ID, quantityNeeded) {
           " to fulfill your order."
       );
     }
-    displayAll(); //recursive shopping is best shopping! Shop till you drop!
+    displayProducts(); 
   });
 } //end purchaseFromDatabase
 
-displayAll();
+displayProducts();
