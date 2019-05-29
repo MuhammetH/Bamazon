@@ -1,6 +1,6 @@
 /*Creating database and table*/
-CREATE DATABASE Bamazon;
-USE Bamazon;
+CREATE DATABASE bamazon;
+USE bamazon;
 /*drops the tabel named products if its already existing*/
 DROP TABLE IF EXISTS `Products`;
 
@@ -10,7 +10,7 @@ CREATE TABLE Products(
     departmentName VARCHAR(50) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
     stockQuantity INTEGER(10),
-    primary key (ItemId)
+    primary key (itemId)
 );
 /*adding products to our table*/
 INSERT INTO Products(productName,departmentName,price,stockQuantity) VALUES('Galaxy Note 8','electronics',449.99,4);

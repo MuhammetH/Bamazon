@@ -24,7 +24,7 @@ function displayProducts() {
       //declare the value categories
       head: ["Item ID", "Product Name", "Category", "Price", "Quantity"],
       //set widths to scale
-      colWidths: [10, 30, 18, 10, 14]
+      colWidths: [5, 30, 18, 10, 5]
     });
     //for each row of the loop
     for (i = 0; i < response.length; i++) {
@@ -67,7 +67,7 @@ function inquireForPurchase() {
 
 function purchaseFromDatabase(ID, quantityNeeded) {
   //check quantity of desired purchase. Minus quantity of the itemID from database if possible. Else inform user "Quantity desired not in stock"
-  connection.query("SELECT * FROM Products WHERE ItemID = " + ID, function(
+  connection.query("SELECT * FROM Products WHERE itemID = " + ID, function(
     error,
     response
   ) {
@@ -78,7 +78,7 @@ function purchaseFromDatabase(ID, quantityNeeded) {
     //if in stock
     if (quantityNeeded <= response[0].stockQuantity) {
       //calculate cost
-      var totalCost = response[0].Price * quantityNeeded;
+      var totalCost = response[0].price * quantityNeeded;
       //inform user
       console.log("Your order hass been placed!");
       console.log(
@@ -92,14 +92,14 @@ function purchaseFromDatabase(ID, quantityNeeded) {
       );
       //update database, minus purchased quantity
       connection.query(
-        "UPDATE Products SET StockQuantity = StockQuantity - " +
+        "UPDATE Products SET stockQuantity = stockQuantity - " +
           quantityNeeded +
-          " WHERE ItemID = " +
+          " WHERE itemID = " +
           ID
       );
     } else {
       console.log(
-        "Our apologies. We don't have enough " +
+        "We are sorry. We don't have enough " +
           response[0].productName +
           " to fulfill your order."
       );
