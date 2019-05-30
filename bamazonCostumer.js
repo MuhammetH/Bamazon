@@ -59,13 +59,15 @@ function inquireForPurchase() {
     ])
     .then(function(answers) {
       //set captured input as variables, pass variables as parameters.
-      var quantityDesired = answers.quantity;
+      var quantityDesired = answers.Quantity;
       var IDDesired = answers.ID;
+      console.log(answers)
       purchaseFromDatabase(IDDesired, quantityDesired);
     });
 } //end inquireForPurchase
 
 function purchaseFromDatabase(ID, quantityNeeded) {
+  console.log(ID, quantityNeeded)
   //check quantity of desired purchase. Minus quantity of the itemID from database if possible. Else inform user "Quantity desired not in stock"
   connection.query('SELECT * FROM Products WHERE itemID = ' + ID, function(
     error,
@@ -80,7 +82,7 @@ function purchaseFromDatabase(ID, quantityNeeded) {
       //calculate cost
       var totalCost = response[0].price * quantityNeeded;
       //inform user
-      console.log("Your order hass been placed!");
+      console.log("Your order has been placed!");
       console.log(
         "Your total cost for " +
           quantityNeeded +
@@ -88,7 +90,7 @@ function purchaseFromDatabase(ID, quantityNeeded) {
           response[0].productName +
           " is " +
           totalCost +
-          ". Thank you for your Business!"
+          ". Nice to do business with you!"
       );
       //update database, minus purchased quantity
       connection.query(
